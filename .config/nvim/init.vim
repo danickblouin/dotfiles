@@ -1,0 +1,110 @@
+:set number
+:set relativenumber
+:set autoindent
+:set tabstop=4
+:set shiftwidth=4
+:set smarttab
+:set softtabstop=4
+:set mouse=a
+:set nohlsearch
+:set nowrap
+:set scrolloff=8
+:set signcolumn=yes
+
+:colorscheme gruvbox
+hi Normal guibg=None ctermbg=NONE
+
+" ----------------
+" ----PLUGINS-----
+" ----------------
+call plug#begin()
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
+Plug 'junegunn/vim-easy-align'
+Plug 'junegunn/goyo.vim' " Focus mode for vim
+Plug 'nvim-lua/plenary.nvim' " Telescope - Files finder
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
+Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
+Plug 'nvim-tree/nvim-tree.lua'
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'http://github.com/tpope/vim-surround' " Surrounding ysw)
+Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
+Plug 'https://github.com/tpope/vim-commentary' " For Commenting gcc & gc
+
+set encoding=UTF-8
+call plug#end()
+
+
+" -------------------------
+" ----PLUGINS SETTINGS-----
+" -------------------------
+let mapleader = " "
+
+nnoremap <leader><C-f> :NvimTreeFocus<CR>
+nnoremap <leader><C-t> :NvimTreeToggle<CR>
+nnoremap <leader><C-s> :NvimTreeFindFile<CR>
+
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+
+" -------------------------
+" ------LUA SETTINGS-------
+" -------------------------
+lua << EOF
+require("toggleterm").setup{}
+-- disable netrw at the very start of your init.lua (strongly advised)
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+-- set termguicolors to enable highlight groups
+vim.opt.termguicolors = true
+
+-- disable netrw at the very start of your init.lua (strongly advised)
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+-- set termguicolors to enable highlight groups
+vim.opt.termguicolors = true
+
+-- empty setup using defaults
+require("nvim-tree").setup()
+
+-- OR setup with some options
+require("nvim-tree").setup({
+  sort_by = "case_sensitive",
+  view = {
+    adaptive_size = true,
+    mappings = {
+      list = {
+        -- { key = "u", action = "dir_up" },
+      },
+    },
+  },
+  renderer = {
+    group_empty = true,
+  },
+  filters = {
+    dotfiles = true,
+  },
+})
+EOF
+
+" -------------------------
+" ----PLUGINS COMMANDS-----
+" -------------------------
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" " Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
+" Enable tab for Coc
+inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"
