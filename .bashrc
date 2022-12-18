@@ -30,8 +30,6 @@ alias vim="nvim"
 alias lab1="code $UNI_PATH/log210/s20223-log210-lab01-v2-s20221-equipe-06 && code $UNI_PATH/log210/log210-systeme-gestion-bordereau-node-express-ts/"
 alias uni="cd $UNI_PATH && ls -1"
 alias guni="cd $ETS_GOOGLE_PATH && ls -1"
-alias log210="cd $UNI_PATH/log210 && ls -1"
-alias glog210="cd $ETS_GOOGLE_PATH/LOG210-02 && ls -1"
 
 
 # REMOVE MACOS WARNING FOR BASH
@@ -46,5 +44,4 @@ if [ -f ~/.git-completion.bash ]; then
 	. ~/.git-completion.bash
 fi
 
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+complete -C pomo pomo

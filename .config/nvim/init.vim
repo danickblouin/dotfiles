@@ -33,28 +33,49 @@ Plug 'http://github.com/tpope/vim-surround' " Surrounding ysw)
 Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
 Plug 'https://github.com/tpope/vim-commentary' " For Commenting gcc & gc
 
+Plug 'lervag/vimtex'
 set encoding=UTF-8
 call plug#end()
 
 
-" -------------------------
-" ----PLUGINS SETTINGS-----
-" -------------------------
+" -------------
+" ----MAPS-----
+" -------------
+
+" set mapleader to space
 let mapleader = " "
 
-nnoremap <leader><C-f> :NvimTreeFocus<CR>
-nnoremap <leader><C-t> :NvimTreeToggle<CR>
-nnoremap <leader><C-s> :NvimTreeFindFile<CR>
-
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
+" move line up or down in visual mode
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
+" maps to move between splits
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
+" ctrl-a to select all
+map <C-a> <esc>ggVG<CR>
+
+" ------------------------------
+" ----PLUGINS SETTINGS/MAPS-----
+" ------------------------------
+
+nnoremap <leader>G <cmd>Goyo<cr>
+
+nnoremap <C-f> :NvimTreeFocus<CR>
+
+" telescope remaps
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+" LaTeX settings
+let g:coc_filetype_map = {'tex': 'latex'}
+let g:vimtex_view_method = 'sioyek'
+let g:vimtex_quickfix_open_on_warning = 0
 " -------------------------
 " ------LUA SETTINGS-------
 " -------------------------
