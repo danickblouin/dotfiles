@@ -52,3 +52,6 @@ fi
 
 # pomo autocompletion
 complete -C pomo pomo
+
+# java
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
