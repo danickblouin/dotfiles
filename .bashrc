@@ -3,6 +3,7 @@
 # ------------------------
 ETS_GOOGLE_PATH="/Users/danick/danick.blouin.1\@etsmtl.net\ -\ Google\ Drive/My\ Drive/2022_AUTOMNE"
 UNI_PATH="/Users/danick/Documents/universite"
+sioyek="/Applications/sioyek.app/Contents/MacOS/"
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
