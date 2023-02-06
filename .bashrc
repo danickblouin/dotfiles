@@ -18,7 +18,7 @@ set -o vi
 # --------------------
 alias bashrc="vi ~/.bashrc"
 alias c="clear"
-alias datef="date "+%Y-%m-%d-%H:%M""
+alias datef="date "+%Y-%m-%dT%H:%M""
 alias dw="cd ~/Downloads && ls -1"
 alias gc="git clone"
 alias github="cd ~/Documents/code/github && ls"
