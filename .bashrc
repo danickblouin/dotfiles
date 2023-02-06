@@ -3,6 +3,7 @@
 # ------------------------
 ETS_GOOGLE_PATH="/Users/danick/danick.blouin.1\@etsmtl.net\ -\ Google\ Drive/My\ Drive/2022_AUTOMNE"
 UNI_PATH="/Users/danick/Documents/universite"
+ETS_ONEDRIVE_PATH="/Users/danick/OneDrive\ -\ ETS"
 sioyek="/Applications/sioyek.app/Contents/MacOS/"
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -15,24 +16,26 @@ set -o vi
 # --------------------
 # -------ALIAS--------
 # --------------------
-alias ls="ls --color -h"
-alias la="ls -a"
-alias ll="ls --color -l"
-alias l1="ls -1"
-alias c="clear"
-alias github="cd ~/Documents/code/github && ls"
-alias gc="git clone"
-alias py="python3"
 alias bashrc="vi ~/.bashrc"
+alias c="clear"
+alias datef="date "+%Y-%m-%d-%H:%M""
 alias dw="cd ~/Downloads && ls -1"
+alias gc="git clone"
+alias github="cd ~/Documents/code/github && ls"
 alias grep="grep --color=always"
+alias l1="ls -1"
+alias la="ls -a"
 alias less="less -R"
+alias ll="ls --color -l"
+alias ls="ls --color -h"
+alias py="python3"
 alias vi="nvim"
 
 
 # Temporary aliases for uni
-alias uni="cd $UNI_PATH && ls -1"
 alias guni="cd $ETS_GOOGLE_PATH && ls -1"
+alias ouni="cd $ETS_ONEDRIVE_PATH && ls -1"
+alias uni="cd $UNI_PATH && ls -1"
 
 
 # REMOVE MACOS WARNING FOR BASH
