@@ -1,4 +1,4 @@
-# based on https://github.com/koekeishiya/skhd
+# https://github.com/koekeishiya/skhd
 
 # focus window
 alt - h : yabai -m window --focus west
