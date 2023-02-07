@@ -34,6 +34,9 @@ Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
 Plug 'https://github.com/tpope/vim-commentary' " For Commenting gcc & gc
 
 Plug 'lervag/vimtex'
+
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax'
 set encoding=UTF-8
 call plug#end()
 
@@ -76,6 +79,10 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 let g:coc_filetype_map = {'tex': 'latex'}
 let g:vimtex_view_method = 'sioyek'
 let g:vimtex_quickfix_open_on_warning = 0
+
+let g:pandoc#modules#disabled = ["folding"]
+let g:pandoc#spell#enabled = 0
+
 " -------------------------
 " ------LUA SETTINGS-------
 " -------------------------
