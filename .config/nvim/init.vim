@@ -10,8 +10,6 @@
 :set nowrap
 :set scrolloff=8
 :set signcolumn=yes
-"no comment on new line
-:set paste
 
 :colorscheme gruvbox
 hi Normal guibg=None ctermbg=NONE

@@ -10,8 +10,6 @@ set nohlsearch
 set nowrap
 set scrolloff=8
 set signcolumn=yes
-"no comment on new line
-set paste
 syntax on
 set encoding=UTF-8
 
@@ -36,7 +34,7 @@ call plug#begin()
 	Plug 'vim-pandoc/vim-pandoc'
 	Plug 'vim-pandoc/vim-pandoc-syntax'
 
-	Plug 'neoclide/coc.nvim', {'branch': 'release'}
+	" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 " -------------
