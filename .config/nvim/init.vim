@@ -10,6 +10,8 @@
 :set nowrap
 :set scrolloff=8
 :set signcolumn=yes
+"no comment on new line
+:set paste
 
 :colorscheme gruvbox
 hi Normal guibg=None ctermbg=NONE
@@ -39,7 +41,6 @@ Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 set encoding=UTF-8
 call plug#end()
-
 
 " -------------
 " ----MAPS-----
