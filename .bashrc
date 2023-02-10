@@ -1,13 +1,14 @@
 # ------------------------
 # -------VARIABLES--------
 # ------------------------
-ETS_GOOGLE_PATH="/Users/danick/danick.blouin.1\@etsmtl.net\ -\ Google\ Drive/My\ Drive/2022_AUTOMNE"
-UNI_PATH="/Users/danick/Documents/universite"
-ETS_ONEDRIVE_PATH="/Users/danick/OneDrive\ -\ ETS"
+GOOGLE="/Users/danick/danick.blouin.1@etsmtl.net - Google Drive/My Drive"
+UNI="/Users/danick/Documents/universite"
+ONEDRIVE="/Users/danick/OneDrive - ETS"
+GITHUB="/Users/danick/Documents/code/github"
 sioyek="/Applications/sioyek.app/Contents/MacOS/"
 
-eval "$(/opt/homebrew/bin/brew shellenv)"
-
+# don't know if i still need it
+# eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # vim mode
 set -o vi
@@ -16,26 +17,20 @@ set -o vi
 # --------------------
 # -------ALIAS--------
 # --------------------
-alias bashrc="vi ~/.bashrc"
-alias c="clear"
-alias datef="date "+%Y-%m-%dT%H:%M""
-alias dw="cd ~/Downloads && ls -1"
-alias gc="git clone"
-alias github="cd ~/Documents/code/github && ls"
-alias grep="grep --color=always"
-alias l1="ls -1"
-alias la="ls -a"
-alias less="less -R"
-alias ll="ls --color -l"
-alias ls="ls --color -h"
-alias py="python3"
-alias vi="nvim"
+alias datef='date +%Y-%m-%dT%H:%M'
+alias dw='cd ~/Downloads && ls -1'
+alias github='cd ~/Documents/code/github && ls'
+alias grep='grep --color=always'
+alias less='less -R'
+alias ls='ls --color -h'
+alias py='python3'
+alias nvi='nvim'
 
 
 # Temporary aliases for uni
-alias guni="cd $ETS_GOOGLE_PATH && ls -1"
-alias ouni="cd $ETS_ONEDRIVE_PATH && ls -1"
-alias uni="cd $UNI_PATH && ls -1"
+alias guni='cd "$GOOGLE" && ls -1'
+alias ouni='cd "$ONEDRIVE" && ls -1'
+alias uni="cd $UNI && ls -1"
 
 
 # REMOVE MACOS WARNING FOR BASH
@@ -93,8 +88,7 @@ __ps1() {
 	if [ "$branch" != "" ]; then
 		PS1+="(${YELLOW} ${branch}${DARK}) "
 	fi
-	PS1+="${BOLD}${DARK}${PWD#"${PWD%/*/*}/"} "
+	PS1+="${BOLD}${DARK}${PWD#"${PWD%/*/*/*}/"} "
 	PS1+="${RESET}\$ -> "
 }
 PROMPT_COMMAND="__ps1"
-
