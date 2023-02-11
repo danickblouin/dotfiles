@@ -135,3 +135,7 @@ nmap ga <Plug>(EasyAlign)
 
 " Enable tab for Coc
 inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"
+
+augroup pandoc_syntax
+	    au! BufNewFile,BufFilePre,BufRead *.md set filetype=markdown.pandoc
+augroup END

@@ -7,8 +7,7 @@ ONEDRIVE="/Users/danick/OneDrive - ETS"
 GITHUB="/Users/danick/Documents/code/github"
 sioyek="/Applications/sioyek.app/Contents/MacOS/"
 
-# don't know if i still need it
-# eval "$(/opt/homebrew/bin/brew shellenv)"
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # vim mode
 set -o vi
