@@ -7,6 +7,12 @@ ONEDRIVE="/Users/danick/OneDrive - ETS"
 GITHUB="/Users/danick/Documents/code/github"
 sioyek="/Applications/sioyek.app/Contents/MacOS/"
 
+export VISUAL="nvim"
+export EDITOR="nvim"
+
+# java
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # vim mode
@@ -23,7 +29,7 @@ alias grep='grep --color=always'
 alias less='less -R'
 alias ls='ls --color -h'
 alias py='python3'
-alias nvi='nvim'
+alias vi='nvim'
 
 
 # Temporary aliases for uni
@@ -51,10 +57,10 @@ fi
 # pomo autocompletion
 complete -C pomo pomo
 
-# java
-export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
-# TIRED OF LOOKING UP COLORS
+# -------------------
+# ------COLORS-------
+# -------------------
 RESET="\[\e[0m\]"
 DEF="\[\e[39m\]"
 BLACK="\[\e[30m\]"
