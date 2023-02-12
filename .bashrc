@@ -1,14 +1,15 @@
 # ------------------------
 # -------VARIABLES--------
 # ------------------------
-GOOGLE="/Users/danick/danick.blouin.1@etsmtl.net - Google Drive/My Drive"
-UNI="/Users/danick/Documents/universite"
-ONEDRIVE="/Users/danick/OneDrive - ETS"
-GITHUB="/Users/danick/Documents/code/github"
-sioyek="/Applications/sioyek.app/Contents/MacOS/"
-
-export VISUAL="nvim"
 export EDITOR="nvim"
+export GITHUB="/Users/danick/Documents/code/github"
+export GOOGLE="/Users/danick/danick.blouin.1@etsmtl.net - Google Drive/My Drive"
+export ONEDRIVE="/Users/danick/OneDrive - ETS"
+export UNI="/Users/danick/Documents/universite"
+export VISUAL="nvim"
+export sioyek="/Applications/sioyek.app/Contents/MacOS/"
+export DOTFILES="/Users/danick/Documents/code/github/dotFiles"
+export SCRIPTS="/Users/danick/Documents/code/github/bash-script"
 
 # java
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
@@ -23,12 +24,15 @@ set -o vi
 # -------ALIAS--------
 # --------------------
 alias datef='date +%Y-%m-%dT%H:%M'
+alias diff='diff --color'
+alias dot='cd $DOTFILES'
 alias dw='cd ~/Downloads && ls -1'
 alias github='cd ~/Documents/code/github && ls'
 alias grep='grep --color=always'
 alias less='less -R'
-alias ls='ls --color -h'
+alias ls='ls -h --color'
 alias py='python3'
+alias scripts='cd $SCRIPTS'
 alias vi='nvim'
 
 
