@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =7
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/Users/danick/Documents/universite/mat350/mat350-devoirs/devoir2/rapport'
 let g:netrw_dirhist_7='/Users/danick/.vim'
 let g:netrw_dirhist_6='/Users/danick/Documents/universite/log210/s20223-log210-lab01-v2-s20221-equipe-06/.git'
 let g:netrw_dirhist_5='/Users/danick/Documents/universite/log210/s20223-log210-lab01-v2-s20221-equipe-06/.git/hooks'
@@ -9,4 +10,3 @@ let g:netrw_dirhist_2='/Users/danick/Documents/universite/log210/s20223-log210-l
 let g:netrw_dirhist_1='/Users/danick/Documents/universite/log210/s20223-log210-lab01-v2-s20221-equipe-06'
 let g:netrw_dirhist_0='/Users/danick/.vim'
 let g:netrw_dirhist_9='/Users/danick/Documents/universite/log210/autres/typescript-tdd-kata/.git'
-let g:netrw_dirhist_8='/Users/danick/.bundle'
