@@ -48,8 +48,8 @@ Ctrl-b Arrows
 # To split windows horizontally:
 Ctrl-b %
 
-# To split windows vertically:
-Ctrl-b "
+# To split windows vertically (ignore '):
+Ctrl-b '"'
 
 # To swap windows:
 Ctrl-b :swap-window -s [0-9] -t [0-9]
@@ -60,3 +60,6 @@ Ctrl-b :swap-window -s [0-9] -t [0-9]
 3. Enter to copy
 4. Change window
 5. `Ctrl+B ]` to paste
+
+# Change path of session (detach first):
+tmux attach-session -t <session_name> -c <path>

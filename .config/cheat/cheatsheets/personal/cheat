@@ -4,7 +4,7 @@ cheat -a <name>
 # To edit a cheatsheet
 cheat -e <command>
 
-# To edit (or create) the foo/bar cheatsheet on the "work" cheatpath:
+# To edit (or create) the foo/bar cheatsheet on the "personal" cheatpath:
 cheat -p personal -e name
 
 # To list available cheatsheets
