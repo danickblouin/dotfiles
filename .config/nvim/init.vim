@@ -35,8 +35,8 @@ Plug 'https://github.com/tpope/vim-commentary' " For Commenting gcc & gc
 
 Plug 'lervag/vimtex'
 
-Plug 'vim-pandoc/vim-pandoc'
-Plug 'vim-pandoc/vim-pandoc-syntax'
+" Plug 'vim-pandoc/vim-pandoc'
+" Plug 'vim-pandoc/vim-pandoc-syntax'
 set encoding=UTF-8
 call plug#end()
 
