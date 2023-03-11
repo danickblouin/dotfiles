@@ -17,7 +17,7 @@ set background=dark
 let g:gruvbox_contrast_dark='soft'
 
 :colorscheme gruvbox
-hi Normal guibg=None ctermbg=NONE
+" hi Normal guibg=None ctermbg=NONE
 
 " ----------------
 " ----PLUGINS-----

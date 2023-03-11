@@ -61,5 +61,8 @@ Ctrl-b :swap-window -s [0-9] -t [0-9]
 4. Change window
 5. `Ctrl+B ]` to paste
 
-# Change path of session (detach first):
+# To change the path of session (detach first):
 tmux attach-session -t <session_name> -c <path>
+
+# To focus on a pane
+Ctrl-b z
