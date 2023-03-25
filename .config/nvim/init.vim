@@ -10,6 +10,7 @@
 :set nowrap
 :set scrolloff=8
 :set signcolumn=yes
+:set encoding=UTF-8
 
 :colorscheme gruvbox
 hi Normal guibg=None ctermbg=NONE
@@ -37,8 +38,8 @@ Plug 'lervag/vimtex'
 
 " Plug 'vim-pandoc/vim-pandoc'
 " Plug 'vim-pandoc/vim-pandoc-syntax'
-set encoding=UTF-8
 call plug#end()
+
 
 " -------------
 " ----MAPS-----

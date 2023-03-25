@@ -12,7 +12,7 @@ export DOTFILES="/Users/danick/Documents/code/github/dotFiles"
 export SCRIPTS="/Users/danick/Documents/code/github/bash-script"
 
 # java
-export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+export PATH="/opt/homebrew/opt/openjdk/bin:/opt/homebrew/bin/pip3:$PATH"
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
