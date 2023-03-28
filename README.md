@@ -8,3 +8,6 @@
 	- Keyboard Shortcuts
 		- Mission Control
 			- Set all prefix for Mission Control to Option instead of Control
+			- Disable Option-Arrows to move through spaces
+		- Spotlight
+			- Remove spotlight shortcut to replace it with Alfred
