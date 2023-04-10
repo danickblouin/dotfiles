@@ -12,8 +12,11 @@
 :set signcolumn=yes
 :set encoding=UTF-8
 
+" theme settings
+:set background=dark
 :colorscheme gruvbox
-hi Normal guibg=None ctermbg=NONE
+" transparent background
+" hi Normal guibg=None ctermbg=NONE
 
 " ----------------
 " ----PLUGINS-----
