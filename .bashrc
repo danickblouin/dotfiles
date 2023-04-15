@@ -8,51 +8,25 @@ export ONEDRIVE="/Users/danick/OneDrive - ETS"
 export UNI="/Users/danick/Documents/universite"
 export VISUAL="nvim"
 export sioyek="/Applications/sioyek.app/Contents/MacOS/"
-export DOTFILES="/Users/danick/Documents/code/github/dotFiles"
+export DOTFILES="/Users/danick/Documents/code/github/dotfiles"
 export SCRIPTS="/Users/danick/Documents/code/github/bash-script"
-
-# java
-export PATH="/opt/homebrew/opt/openjdk/bin:/opt/homebrew/bin/pip3:$PATH"
-
-eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # vim mode
 set -o vi
+
+# REMOVE MACOS WARNING FOR BASH AND EXPORT PATH
+if [ "$(uname)" = "Darwin" ]; then
+	eval "$(/opt/homebrew/bin/brew shellenv)" # add homebrew to path
+	export BASH_SILENCE_DEPRECATION_WARNING=1
+	export PATH="/opt/homebrew/opt/openjdk/bin:/opt/homebrew/bin/pip3:/usr/local/clamav/bin:/usr/local/clamav/sbin:$PATH"
+fi
 
 
 # --------------------
 # -------ALIAS--------
 # --------------------
-alias datef='date +%Y-%m-%dT%H:%M'
-alias diff='diff --color'
-alias dot='cd $DOTFILES'
-alias dw='cd ~/Downloads && ls -1'
-alias github='cd ~/Documents/code/github && ls'
-alias grep='grep --color=always'
-alias less='less -R'
-alias ls='ls -h --color'
-alias py='python3'
-alias scripts='cd $SCRIPTS'
-alias update='brew update && brew upgrade && brew cleanup'
-alias vi='nvim'
-
-
-# Temporary aliases for uni
-alias guni='cd "$GOOGLE" && ls -1'
-alias ouni='cd "$ONEDRIVE" && ls -1'
-alias uni="cd $UNI && ls -1"
-
-# Classes
-alias log320='cd "$UNI/log320" && ls -1'
-alias olog320='cd "$ONEDRIVE/log320" && ls -1'
-alias gti350='cd "$UNI/gti350" && ls -1'
-alias ogti350='cd "$ONEDRIVE/gti350" && ls -1'
-
-
-# REMOVE MACOS WARNING FOR BASH
-if [ "$(uname)" = "Darwin" ]
-then
-	export BASH_SILENCE_DEPRECATION_WARNING=1
+if [ -f ~/.bash_aliases ]; then
+	. ~/.bash_aliases
 fi
 
 

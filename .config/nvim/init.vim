@@ -16,7 +16,7 @@
 :set background=dark
 :colorscheme gruvbox
 " transparent background
-" hi Normal guibg=None ctermbg=NONE
+hi Normal guibg=None ctermbg=NONE
 
 " ----------------
 " ----PLUGINS-----

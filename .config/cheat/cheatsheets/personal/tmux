@@ -19,6 +19,9 @@ Ctrl-b $
 # To switch session:
 Ctrl-b s
 
+# To create a new session:
+tmux new -s <session_name>
+
 # To delete session:
 tmux kill-session -t <session_name>
 

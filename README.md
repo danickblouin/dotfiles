@@ -11,3 +11,4 @@
 			- Disable Option-Arrows to move through spaces
 		- Spotlight
 			- Remove spotlight shortcut to replace it with Alfred
+        - Use the Unix layout (Control instead of Caps lock)
