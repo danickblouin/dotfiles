@@ -11,6 +11,7 @@
 :set scrolloff=8
 :set signcolumn=yes
 :set encoding=UTF-8
+:set hlsearch
 
 " theme settings
 :set background=dark
