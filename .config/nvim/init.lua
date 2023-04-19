@@ -32,6 +32,8 @@ local plugins = require('packer').startup(function()
 
     use 'lervag/vimtex'
 
+	use {'stevearc/vim-arduino'}
+
     -- use 'vim-pandoc/vim-pandoc'
     -- use 'vim-pandoc/vim-pandoc-syntax'
 end)
@@ -69,6 +71,14 @@ vim.g.vimtex_quickfix_open_on_warning = 0
 vim.g.pandoc_modules_disabled = {'folding'}
 vim.g.pandoc_spell_enabled = 0
 
+-- Arduino settings
+vim.api.nvim_buf_set_keymap(0, "n", "<leader>aa", ":ArduinoAttach<CR>", {silent = true})
+vim.api.nvim_buf_set_keymap(0, "n", "<leader>am", ":ArduinoVerify<CR>", {silent = true})
+vim.api.nvim_buf_set_keymap(0, "n", "<leader>au", ":ArduinoUpload<CR>", {silent = true})
+vim.api.nvim_buf_set_keymap(0, "n", "<leader>aus", ":ArduinoUploadAndSerial<CR>", {silent = true})
+vim.api.nvim_buf_set_keymap(0, "n", "<leader>as", ":ArduinoSerial<CR>", {silent = true})
+vim.api.nvim_buf_set_keymap(0, "n", "<leader>ab", ":ArduinoChooseBoard<CR>", {silent = true})
+vim.api.nvim_buf_set_keymap(0, "n", "<leader>ap", ":ArduinoChooseProgrammer<CR>", {silent = true})
 
 -- Define function to open file in new tmux pane
 function open_file_in_tmux()
