@@ -80,6 +80,10 @@ vim.api.nvim_buf_set_keymap(0, "n", "<leader>as", ":ArduinoSerial<CR>", {silent 
 vim.api.nvim_buf_set_keymap(0, "n", "<leader>ab", ":ArduinoChooseBoard<CR>", {silent = true})
 vim.api.nvim_buf_set_keymap(0, "n", "<leader>ap", ":ArduinoChooseProgrammer<CR>", {silent = true})
 
+-- Markdown remaps
+vim.api.nvim_set_keymap('n', '<leader>mp', '<cmd>MarkdownPreview<cr>', {noremap = true})
+vim.api.nvim_set_keymap('n', '<leader>mps', '<cmd>MarkdownPreviewStop<cr>', {noremap = true})
+
 -- Define function to open file in new tmux pane
 function open_file_in_tmux()
   local selection = require('telescope.actions.state').get_selected_entry()
