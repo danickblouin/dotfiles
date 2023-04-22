@@ -13,6 +13,7 @@ alias opensio='open -a sioyek'
 alias pdfgrep='pdfgrep --color=always -n'
 alias py='python3'
 alias scripts='cd $SCRIPTS'
+alias tree='tree -C'
 alias update='brew update && brew upgrade && brew cleanup'
 alias vi='nvim'
 

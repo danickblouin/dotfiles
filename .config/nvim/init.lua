@@ -7,7 +7,6 @@ vim.opt.shiftwidth = 4
 vim.opt.smarttab = true
 vim.opt.softtabstop = 4
 vim.opt.mouse = 'a'
-vim.opt.hlsearch = false
 vim.opt.wrap = false
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = 'yes'
@@ -21,21 +20,26 @@ vim.cmd('hi Normal guibg=None ctermbg=NONE')
 
 -- Plugins
 local plugins = require('packer').startup(function()
-	use 'wbthomason/packer.nvim'
+    -- Packer
+    use 'wbthomason/packer.nvim'
+    
+    -- Markdown
     use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install'}
+    
+    -- Alignment and commenting
     use 'junegunn/vim-easy-align'
-    use {'nvim-telescope/telescope.nvim', tag = '0.1.1'}
-	use 'nvim-lua/plenary.nvim' -- required by telescope
-
     use 'tpope/vim-surround'
     use 'tpope/vim-commentary'
+    
+    -- File navigation and search
+    use {'nvim-telescope/telescope.nvim', tag = '0.1.1'}
+    use 'nvim-lua/plenary.nvim' -- required by telescope
 
+    -- LaTeX
     use 'lervag/vimtex'
-
-	use {'stevearc/vim-arduino'}
-
-    -- use 'vim-pandoc/vim-pandoc'
-    -- use 'vim-pandoc/vim-pandoc-syntax'
+    
+    -- Arduino
+    use {'stevearc/vim-arduino'}
 end)
 
 -- Maps
@@ -54,8 +58,7 @@ vim.api.nvim_set_keymap('', '<C-l>', '<C-W>l', {})
 -- Ctrl-a to select all
 vim.api.nvim_set_keymap('', '<C-a>', '<esc>ggVG<CR>', {})
 
--- Plugins settings/maps
-vim.api.nvim_set_keymap('n', '<leader>G', '<cmd>Goyo<cr>', {noremap = true})
+-- Plugin settings/maps
 
 -- Telescope remaps
 vim.api.nvim_set_keymap('n', '<leader>ff', '<cmd>Telescope find_files<cr>', {noremap = true})
@@ -67,9 +70,6 @@ vim.api.nvim_set_keymap('n', '<leader>fh', '<cmd>Telescope help _tags<cr>', {nor
 vim.g.coc_filetype_map = {tex = 'latex'}
 vim.g.vimtex_view_method = 'sioyek'
 vim.g.vimtex_quickfix_open_on_warning = 0
-
-vim.g.pandoc_modules_disabled = {'folding'}
-vim.g.pandoc_spell_enabled = 0
 
 -- Arduino settings
 vim.api.nvim_buf_set_keymap(0, "n", "<leader>aa", ":ArduinoAttach<CR>", {silent = true})
@@ -86,11 +86,10 @@ vim.api.nvim_set_keymap('n', '<leader>mps', '<cmd>MarkdownPreviewStop<cr>', {nor
 
 -- Define function to open file in new tmux pane
 function open_file_in_tmux()
-  local selection = require('telescope.actions.state').get_selected_entry()
-  local cmd = 'tmux split-window -h "nvim ' .. selection.path .. '"'
-  vim.cmd('silent !' .. cmd)
+    local selection = require('telescope.actions.state').get_selected_entry()
+    local cmd = 'tmux split-window -h "nvim ' .. selection.path .. '"'
+    vim.cmd('silent !' .. cmd)
 end
 
 -- Set keymapping for opening file in new tmux pane
 vim.api.nvim_set_keymap('n', '<leader>t', '<cmd>lua open_file_in_tmux()<cr>', { noremap = true })
-
