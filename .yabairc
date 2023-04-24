@@ -43,5 +43,7 @@ yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add app="^Logi Options+$" manage=off
 yabai -m rule --add app="^Alfred Preferences$" manage=off
 yabai -m rule --add app="^Activity Monitor$" manage=off
+yabai -m rule --add app="^1Password$" manage=off
+yabai -m rule --add app="^ÉTSMobile$" manage=off
 
 echo "yabai configuration loaded.."
