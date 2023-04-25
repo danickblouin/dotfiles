@@ -39,11 +39,14 @@ yabai -m config right_padding 10
 yabai -m config window_gap 10
 
 # apps to not manage (ignore)
-yabai -m rule --add app="^System Settings$" manage=off
-yabai -m rule --add app="^Logi Options+$" manage=off
-yabai -m rule --add app="^Alfred Preferences$" manage=off
-yabai -m rule --add app="^Activity Monitor$" manage=off
 yabai -m rule --add app="^1Password$" manage=off
+yabai -m rule --add app="^Activity Monitor$" manage=off
+yabai -m rule --add app="^Alfred Preferences$" manage=off
+yabai -m rule --add app="^App Store$" manage=off
+yabai -m rule --add app="^Logi Options+$" manage=off
+yabai -m rule --add app="^System Settings$" manage=off
+yabai -m rule --add app="^VLC$" manage=off
+yabai -m rule --add app="^mpv$" manage=off
 yabai -m rule --add app="^ÉTSMobile$" manage=off
 
 echo "yabai configuration loaded.."

@@ -25,6 +25,8 @@ local plugins = require('packer').startup(function()
     
     -- Markdown
     use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install'}
+	-- use {'godlygeek/tabular'}
+	-- use {'preservim/vim-markdown'}
     
     -- Alignment and commenting
     use 'junegunn/vim-easy-align'
@@ -83,6 +85,7 @@ vim.api.nvim_buf_set_keymap(0, "n", "<leader>ap", ":ArduinoChooseProgrammer<CR>"
 -- Markdown remaps
 vim.api.nvim_set_keymap('n', '<leader>mp', '<cmd>MarkdownPreview<cr>', {noremap = true})
 vim.api.nvim_set_keymap('n', '<leader>mps', '<cmd>MarkdownPreviewStop<cr>', {noremap = true})
+vim.g.mkdp_theme = 'light'
 
 -- Define function to open file in new tmux pane
 function open_file_in_tmux()
