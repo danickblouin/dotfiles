@@ -5,7 +5,8 @@ font:
   size: 13
 
 window:
-  opacity: 0.75
+  # opacity: 0.75
+  opacity: 1
 
 cursor:
   style:

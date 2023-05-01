@@ -25,6 +25,7 @@ local plugins = require('packer').startup(function()
     
     -- Markdown
     use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install'}
+	use 'img-paste-devs/img-paste.vim'
 	-- use {'godlygeek/tabular'}
 	-- use {'preservim/vim-markdown'}
     
@@ -58,7 +59,7 @@ vim.api.nvim_set_keymap('', '<C-h>', '<C-W>h', {})
 vim.api.nvim_set_keymap('', '<C-l>', '<C-W>l', {})
 
 -- Ctrl-a to select all
-vim.api.nvim_set_keymap('', '<C-a>', '<esc>ggVG<CR>', {})
+-- vim.api.nvim_set_keymap('', '<C-a>', '<esc>ggVG<CR>', {})
 
 -- Plugin settings/maps
 
@@ -86,6 +87,14 @@ vim.api.nvim_buf_set_keymap(0, "n", "<leader>ap", ":ArduinoChooseProgrammer<CR>"
 vim.api.nvim_set_keymap('n', '<leader>mp', '<cmd>MarkdownPreview<cr>', {noremap = true})
 vim.api.nvim_set_keymap('n', '<leader>mps', '<cmd>MarkdownPreviewStop<cr>', {noremap = true})
 vim.g.mkdp_theme = 'light'
+
+vim.cmd([[
+  autocmd FileType markdown nmap <buffer><silent> <leader>p :call mdip#MarkdownClipboardImage()<CR>
+]])
+
+vim.g.mdip_imgdir = 'img'
+vim.g.mdip_imgname = 'image'
+
 
 -- Define function to open file in new tmux pane
 function open_file_in_tmux()
