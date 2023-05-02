@@ -12,6 +12,7 @@ vim.opt.scrolloff = 8
 vim.opt.signcolumn = 'yes'
 vim.opt.encoding = 'UTF-8'
 vim.opt.hlsearch = true
+vim.opt.clipboard = 'unnamedplus'
 
 -- Theme settings
 vim.opt.background = 'dark'
@@ -76,7 +77,7 @@ vim.g.vimtex_quickfix_open_on_warning = 0
 
 -- Arduino settings
 vim.api.nvim_buf_set_keymap(0, "n", "<leader>aa", ":ArduinoAttach<CR>", {silent = true})
-vim.api.nvim_buf_set_keymap(0, "n", "<leader>am", ":ArduinoVerify<CR>", {silent = true})
+vim.api.nvim_buf_set_keymap(0, "n", "<leader>av", ":ArduinoVerify<CR>", {silent = true})
 vim.api.nvim_buf_set_keymap(0, "n", "<leader>au", ":ArduinoUpload<CR>", {silent = true})
 vim.api.nvim_buf_set_keymap(0, "n", "<leader>aus", ":ArduinoUploadAndSerial<CR>", {silent = true})
 vim.api.nvim_buf_set_keymap(0, "n", "<leader>as", ":ArduinoSerial<CR>", {silent = true})
