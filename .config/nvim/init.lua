@@ -13,6 +13,22 @@ vim.opt.signcolumn = 'yes'
 vim.opt.encoding = 'UTF-8'
 vim.opt.hlsearch = true
 
+-- Set clipboard if in WSL
+if vim.fn.has('win32unix') then
+	vim.g.clipboard = {
+		name = 'win32yank-wsl',
+		copy = {
+			['+'] = 'win32yank.exe -i --crlf',
+			['*'] = 'win32yank.exe -i --crlf',
+		},
+		paste = {
+			['+'] = 'win32yank.exe -o --lf',
+			['*'] = 'win32yank.exe -o --lf',
+		},
+		cache_enabled = 0,
+	}
+end
+
 -- Theme settings
 vim.opt.background = 'dark'
 vim.cmd('colorscheme gruvbox')
@@ -23,12 +39,6 @@ local plugins = require('packer').startup(function()
     -- Packer
     use 'wbthomason/packer.nvim'
     
-    -- Markdown
-    use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install'}
-	use 'img-paste-devs/img-paste.vim'
-	-- use {'godlygeek/tabular'}
-	-- use {'preservim/vim-markdown'}
-    
     -- Alignment and commenting
     use 'junegunn/vim-easy-align'
     use 'tpope/vim-surround'
@@ -37,7 +47,18 @@ local plugins = require('packer').startup(function()
     -- File navigation and search
     use {'nvim-telescope/telescope.nvim', tag = '0.1.1'}
     use 'nvim-lua/plenary.nvim' -- required by telescope
+	use 'preservim/nerdtree'
 
+    -- Markdown
+	use({
+		"iamcco/markdown-preview.nvim",
+		run = function() vim.fn["mkdp#util#install"]() end,
+	})
+
+	use 'img-paste-devs/img-paste.vim'
+	-- use {'godlygeek/tabular'}
+	-- use {'preservim/vim-markdown'}
+    
     -- LaTeX
     use 'lervag/vimtex'
     
@@ -68,6 +89,13 @@ vim.api.nvim_set_keymap('n', '<leader>ff', '<cmd>Telescope find_files<cr>', {nor
 vim.api.nvim_set_keymap('n', '<leader>fg', '<cmd>Telescope live_grep<cr>', {noremap = true})
 vim.api.nvim_set_keymap('n', '<leader>fb', '<cmd>Telescope buffers<cr>', {noremap = true})
 vim.api.nvim_set_keymap('n', '<leader>fh', '<cmd>Telescope help _tags<cr>', {noremap = true})
+
+-- NERDTree remaps
+vim.api.nvim_set_keymap('n', '<leader>n', ':NERDTreeFocus<CR>', {noremap = true})
+vim.api.nvim_set_keymap('n', '<C-n>', ':NERDTree<CR>', {noremap = true})
+vim.api.nvim_set_keymap('n', '<C-t>', ':NERDTreeToggle<CR>', {noremap = true})
+vim.api.nvim_set_keymap('n', '<C-f>', ':NERDTreeFind<CR>', {noremap = true})
+
 
 -- LaTeX settings
 vim.g.coc_filetype_map = {tex = 'latex'}
@@ -105,3 +133,4 @@ end
 
 -- Set keymapping for opening file in new tmux pane
 vim.api.nvim_set_keymap('n', '<leader>t', '<cmd>lua open_file_in_tmux()<cr>', { noremap = true })
+

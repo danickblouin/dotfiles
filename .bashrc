@@ -2,14 +2,13 @@
 # -------VARIABLES--------
 # ------------------------
 export EDITOR="nvim"
-export GITHUB="/Users/danick/Documents/code/github"
+export GITHUB=~/Documents/code/github
 export GOOGLE="/Users/danick/danick.blouin.1@etsmtl.net - Google Drive/My Drive"
 export ONEDRIVE="/Users/danick/OneDrive - ETS"
-export UNI="/Users/danick/Documents/universite"
 export VISUAL="nvim"
 export sioyek="/Applications/sioyek.app/Contents/MacOS/"
-export DOTFILES="/Users/danick/Documents/code/github/dotfiles"
-export SCRIPTS="/Users/danick/Documents/code/github/bash-script"
+export DOTFILES=~/Documents/code/github/dotfiles
+export SCRIPTS=~/Documents/code/github/bash-script
 
 # vim mode
 set -o vi
