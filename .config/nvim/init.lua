@@ -12,7 +12,6 @@ vim.opt.scrolloff = 8
 vim.opt.signcolumn = 'yes'
 vim.opt.encoding = 'UTF-8'
 vim.opt.hlsearch = true
-vim.opt.clipboard = 'unnamedplus'
 
 -- Theme settings
 vim.opt.background = 'dark'
@@ -44,6 +43,13 @@ local plugins = require('packer').startup(function()
     
     -- Arduino
     use {'stevearc/vim-arduino'}
+
+	-- PlantUML
+    use {'weirongxu/plantuml-previewer.vim'}
+	use {'tyru/open-browser.vim'}
+	use {'aklt/plantuml-syntax'}
+
+	use {'Pocco81/true-zen.nvim'}
 end)
 
 -- Maps

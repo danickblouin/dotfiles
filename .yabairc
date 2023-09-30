@@ -43,9 +43,12 @@ yabai -m rule --add app="^1Password$" manage=off
 yabai -m rule --add app="^Activity Monitor$" manage=off
 yabai -m rule --add app="^Alfred Preferences$" manage=off
 yabai -m rule --add app="^App Store$" manage=off
+yabai -m rule --add app="^Calculator$" manage=off
 yabai -m rule --add app="^Logi Options+$" manage=off
+yabai -m rule --add app="^Spotify$" manage=off
 yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add app="^VLC$" manage=off
+yabai -m rule --add app="^Zwift$" manage=off
 yabai -m rule --add app="^mpv$" manage=off
 yabai -m rule --add app="^ÉTSMobile$" manage=off
 

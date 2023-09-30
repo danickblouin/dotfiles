@@ -10,6 +10,9 @@ export VISUAL="nvim"
 export sioyek="/Applications/sioyek.app/Contents/MacOS/"
 export DOTFILES="/Users/danick/Documents/code/github/dotfiles"
 export SCRIPTS="/Users/danick/Documents/code/github/bash-script"
+export GEM_HOME=$HOME/gems
+
+export PKG_CONFIG_PATH="/opt/homebrew/opt/readline/lib/pkgconfig"
 
 # vim mode
 set -o vi
@@ -18,7 +21,7 @@ set -o vi
 if [ "$(uname)" = "Darwin" ]; then
 	eval "$(/opt/homebrew/bin/brew shellenv)" # add homebrew to path
 	export BASH_SILENCE_DEPRECATION_WARNING=1
-	export PATH="/opt/homebrew/opt/openjdk/bin:/opt/homebrew/bin/pip3:/usr/local/clamav/bin:/usr/local/clamav/sbin:$PATH"
+	export PATH="$HOME/gems/bin:$HOME/.rbenv/bin:/opt/homebrew/opt/openjdk/bin:/opt/homebrew/bin/pip3:/usr/local/clamav/bin:/usr/local/clamav/sbin:$PATH"
 fi
 
 
