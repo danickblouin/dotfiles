@@ -10,6 +10,7 @@ export sioyek="/Applications/sioyek.app/Contents/MacOS/"
 export DOTFILES=~/Documents/code/github/dotfiles
 export SCRIPTS=~/Documents/code/github/bash-script
 export GEM_HOME=$HOME/gems
+export UNI=~/Documents/universite
 
 export PKG_CONFIG_PATH="/opt/homebrew/opt/readline/lib/pkgconfig"
 

@@ -13,22 +13,6 @@ vim.opt.signcolumn = 'yes'
 vim.opt.encoding = 'UTF-8'
 vim.opt.hlsearch = true
 
--- Set clipboard if in WSL
-if vim.fn.has('win32unix') then
-	vim.g.clipboard = {
-		name = 'win32yank-wsl',
-		copy = {
-			['+'] = 'win32yank.exe -i --crlf',
-			['*'] = 'win32yank.exe -i --crlf',
-		},
-		paste = {
-			['+'] = 'win32yank.exe -o --lf',
-			['*'] = 'win32yank.exe -o --lf',
-		},
-		cache_enabled = 0,
-	}
-end
-
 -- Theme settings
 vim.opt.background = 'dark'
 vim.cmd('colorscheme gruvbox')
@@ -45,7 +29,8 @@ local plugins = require('packer').startup(function()
     use 'tpope/vim-commentary'
     
     -- File navigation and search
-    use {'nvim-telescope/telescope.nvim', tag = '0.1.1'}
+    -- use {'nvim-telescope/telescope.nvim', tag = '0.1.1'}
+    use 'nvim-telescope/telescope.nvim'
     use 'nvim-lua/plenary.nvim' -- required by telescope
 	use 'preservim/nerdtree'
 
