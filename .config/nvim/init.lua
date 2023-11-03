@@ -1,128 +1,155 @@
--- General Settings
-vim.opt.number = true
-vim.opt.relativenumber = true
-vim.opt.autoindent = true
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.smarttab = true
-vim.opt.softtabstop = 4
-vim.opt.mouse = 'a'
-vim.opt.wrap = true
-vim.opt.scrolloff = 8
-vim.opt.signcolumn = 'yes'
-vim.opt.encoding = 'UTF-8'
-vim.opt.hlsearch = true
+ ----------------------
+-- General settings --
+----------------------
+
+local set = vim.opt  -- Shortcut to set options
+
+set.number = true
+set.relativenumber = true
+set.autoindent = true
+set.tabstop = 4
+set.shiftwidth = 4
+set.smarttab = true
+set.softtabstop = 4
+set.mouse = 'a'
+set.wrap = true
+set.scrolloff = 8
+set.signcolumn = 'yes'
+set.encoding = 'utf-8'
+set.hlsearch = true
 
 -- Theme settings
-vim.opt.background = 'dark'
-vim.cmd('colorscheme gruvbox')
-vim.cmd('hi Normal guibg=None ctermbg=NONE')
+set.background = 'dark'
+vim.cmd [[colorscheme gruvbox]]
+vim.cmd [[hi Normal guibg=None ctermbg=NONE]]
 
--- Plugins
-local plugins = require('packer').startup(function()
-    -- Packer
+-- Key Mappings
+local map = vim.api.nvim_set_keymap  -- Shortcut to set keymaps
+local opts = { noremap = true }  -- Reuse options for noremap
+vim.g.mapleader = ' '
+
+-- Moving lines in visual mode
+map('v', 'J', ":m '>+1<CR>gv=gv", opts)
+map('v', 'K', ":m '<-2<CR>gv=gv", opts)
+
+-- Moving between splits
+map('', '<C-j>', '<C-W>j', opts)
+map('', '<C-k>', '<C-W>k', opts)
+map('', '<C-h>', '<C-W>h', opts)
+map('', '<C-l>', '<C-W>l', opts)
+
+--------------------------
+-- Plugin configuration --
+--------------------------
+require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
-    
-    -- Alignment and commenting
+	-- Alignment and text manipulation
     use 'junegunn/vim-easy-align'
     use 'tpope/vim-surround'
     use 'tpope/vim-commentary'
-    
-    -- File navigation and search
-    -- use {'nvim-telescope/telescope.nvim', tag = '0.1.1'}
+	use {
+		'VonHeikemen/lsp-zero.nvim',
+		branch = 'v3.x',
+		requires = {
+			-- LSP Support
+			{'neovim/nvim-lspconfig'}, -- required
+			{
+				'williamboman/mason.nvim',
+				run = function()
+					pcall(vim.cmd, 'MasonUpdate')
+				end,
+			},
+			{'williamboman/mason-lspconfig.nvim'},
+			-- Autocompletion
+			{'hrsh7th/nvim-cmp'},
+			{'hrsh7th/cmp-nvim-lsp'},
+			{'L3MON4D3/LuaSnip'},
+		}
+	}
+	--
+
+	-- File searching and navigation
     use 'nvim-telescope/telescope.nvim'
     use 'nvim-lua/plenary.nvim' -- required by telescope
-	use 'preservim/nerdtree'
+    use 'preservim/nerdtree'
+	--
 
-    -- Markdown
-	use({
-		"iamcco/markdown-preview.nvim",
-		run = function() vim.fn["mkdp#util#install"]() end,
-	})
-
-	use 'img-paste-devs/img-paste.vim'
-	-- use {'godlygeek/tabular'}
-	-- use {'preservim/vim-markdown'}
-    
-    -- LaTeX
+	-- Markdown and LaTeX
+    use {
+        "iamcco/markdown-preview.nvim",
+        run = 'vim.fn["mkdp#util#install"]()'
+    }
+    use 'img-paste-devs/img-paste.vim'
     use 'lervag/vimtex'
-    
-    -- Arduino
+	--
+
     use {'stevearc/vim-arduino'}
-
-	-- PlantUML
     use {'weirongxu/plantuml-previewer.vim'}
-	use {'tyru/open-browser.vim'}
-	use {'aklt/plantuml-syntax'}
-
-	use {'Pocco81/true-zen.nvim'}
+    use {'tyru/open-browser.vim'}
+    use {'aklt/plantuml-syntax'}
+    use {'Pocco81/true-zen.nvim'}
 end)
 
--- Maps
-vim.g.mapleader = ' '
+------------------------------------------
+-- Plugin specific keymaps and settings --
+------------------------------------------
 
--- Move line up or down in visual mode
-vim.api.nvim_set_keymap('v', 'J', ':m \'>+1<CR>gv=gv', {noremap = true})
-vim.api.nvim_set_keymap('v', 'K', ':m \'<-2<CR>gv=gv', {noremap = true})
+-- LSP
+local lsp_zero = require('lsp-zero')
 
--- Maps to move between splits
-vim.api.nvim_set_keymap('', '<C-j>', '<C-W>j', {})
-vim.api.nvim_set_keymap('', '<C-k>', '<C-W>k', {})
-vim.api.nvim_set_keymap('', '<C-h>', '<C-W>h', {})
-vim.api.nvim_set_keymap('', '<C-l>', '<C-W>l', {})
+lsp_zero.on_attach(function(client, bufnr)
+	-- see :help lsp-zero-keybindings
+	lsp_zero.default_keymaps({buffer = bufnr})
+	lsp_zero.buffer_autoformat()
+end)
 
--- Ctrl-a to select all
--- vim.api.nvim_set_keymap('', '<C-a>', '<esc>ggVG<CR>', {})
+require('mason').setup({})
+require('mason-lspconfig').setup({
+	ensure_installed = {'clangd', 'pyright', 'texlab'},
+	handlers = {
+		lsp_zero.default_setup,
+	},
+})
 
--- Plugin settings/maps
+-- to fix the issue with the encodings error
+require('lspconfig').clangd.setup {
+	cmd = { "clangd", "--offset-encoding=utf-16" },
+}
 
--- Telescope remaps
-vim.api.nvim_set_keymap('n', '<leader>ff', '<cmd>Telescope find_files<cr>', {noremap = true})
-vim.api.nvim_set_keymap('n', '<leader>fg', '<cmd>Telescope live_grep<cr>', {noremap = true})
-vim.api.nvim_set_keymap('n', '<leader>fb', '<cmd>Telescope buffers<cr>', {noremap = true})
-vim.api.nvim_set_keymap('n', '<leader>fh', '<cmd>Telescope help _tags<cr>', {noremap = true})
+-- Telescope
+map('n', '<leader>ff', '<cmd>Telescope find_files<cr>', opts)
+map('n', '<leader>fg', '<cmd>Telescope live_grep<cr>', opts)
+map('n', '<leader>fb', '<cmd>Telescope buffers<cr>', opts)
+map('n', '<leader>fh', '<cmd>Telescope help_tags<cr>', opts)
 
--- NERDTree remaps
-vim.api.nvim_set_keymap('n', '<leader>n', ':NERDTreeFocus<CR>', {noremap = true})
-vim.api.nvim_set_keymap('n', '<C-n>', ':NERDTree<CR>', {noremap = true})
-vim.api.nvim_set_keymap('n', '<C-t>', ':NERDTreeToggle<CR>', {noremap = true})
-vim.api.nvim_set_keymap('n', '<C-f>', ':NERDTreeFind<CR>', {noremap = true})
+-- NERDTree
+map('n', '<leader>n', ':NERDTreeFocus<CR>', opts)
+map('n', '<C-n>', ':NERDTree<CR>', opts)
+map('n', '<C-t>', ':NERDTreeToggle<CR>', opts)
+map('n', '<C-f>', ':NERDTreeFind<CR>', opts)
 
-
--- LaTeX settings
-vim.g.coc_filetype_map = {tex = 'latex'}
+-- LaTeX
 vim.g.vimtex_view_method = 'sioyek'
 vim.g.vimtex_quickfix_open_on_warning = 0
 
--- Arduino settings
-vim.api.nvim_buf_set_keymap(0, "n", "<leader>aa", ":ArduinoAttach<CR>", {silent = true})
-vim.api.nvim_buf_set_keymap(0, "n", "<leader>av", ":ArduinoVerify<CR>", {silent = true})
-vim.api.nvim_buf_set_keymap(0, "n", "<leader>au", ":ArduinoUpload<CR>", {silent = true})
-vim.api.nvim_buf_set_keymap(0, "n", "<leader>aus", ":ArduinoUploadAndSerial<CR>", {silent = true})
-vim.api.nvim_buf_set_keymap(0, "n", "<leader>as", ":ArduinoSerial<CR>", {silent = true})
-vim.api.nvim_buf_set_keymap(0, "n", "<leader>ab", ":ArduinoChooseBoard<CR>", {silent = true})
-vim.api.nvim_buf_set_keymap(0, "n", "<leader>ap", ":ArduinoChooseProgrammer<CR>", {silent = true})
-
--- Markdown remaps
-vim.api.nvim_set_keymap('n', '<leader>mp', '<cmd>MarkdownPreview<cr>', {noremap = true})
-vim.api.nvim_set_keymap('n', '<leader>mps', '<cmd>MarkdownPreviewStop<cr>', {noremap = true})
+-- Markdown
+map('n', '<leader>mp', '<cmd>MarkdownPreview<cr>', opts)
+map('n', '<leader>mps', '<cmd>MarkdownPreviewStop<cr>', opts)
 vim.g.mkdp_theme = 'light'
-
-vim.cmd([[
+vim.cmd [[
   autocmd FileType markdown nmap <buffer><silent> <leader>p :call mdip#MarkdownClipboardImage()<CR>
-]])
+]]
 
-vim.g.mdip_imgdir = 'img'
-vim.g.mdip_imgname = 'image'
+-----------------------
+-- Utility functions --
+-----------------------
 
-
--- Define function to open file in new tmux pane
-function open_file_in_tmux()
+-- Open file in new tmux pane
+local function open_file_in_tmux()
     local selection = require('telescope.actions.state').get_selected_entry()
     local cmd = 'tmux split-window -h "nvim ' .. selection.path .. '"'
     vim.cmd('silent !' .. cmd)
 end
 
--- Set keymapping for opening file in new tmux pane
-vim.api.nvim_set_keymap('n', '<leader>t', '<cmd>lua open_file_in_tmux()<cr>', { noremap = true })
-
+-- Set keymapping for the tmux pane opening function
+map('n', '<leader>t', '<cmd>lua open_file_in_tmux()<cr>', opts)
