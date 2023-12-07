@@ -1,6 +1,7 @@
 # ------------------------
 # -------VARIABLES--------
 # ------------------------
+export ALGORIA=~/Documents/algoria
 export EDITOR="nvim"
 export GITHUB=~/Documents/code/github
 export GOOGLE="/Users/danick/danick.blouin.1@etsmtl.net - Google Drive/My Drive"
@@ -79,9 +80,11 @@ __ps1() {
 	fi
 	branch="$(git branch --show-current 2> /dev/null)"
 	if [ "$branch" != "" ]; then
-		PS1+="(${YELLOW} ${branch}${DARK}) "
+		# PS1+="(${YELLOW} ${branch}${DARK}) "
+		PS1+="(${YELLOW}${branch}${DARK}) "
 	fi
-	PS1+="${BOLD}${DARK}${PWD#"${PWD%/*/*/*}/"} "
+	# PS1+="${BOLD}${DARK}${PWD#"${PWD%/*/*/*}/"} "
+	PS1+="${BOLD}${DARK}${PWD#"${PWD%/*/*}/"} "
 	PS1+="${RESET}\$ -> "
 }
 PROMPT_COMMAND="__ps1"
