@@ -26,19 +26,14 @@ alias uni="cd $UNI && ls -1"
 alias pf="pdfgrep -in"
 
 # Classes
-alias gti510='cd "$UNI/gti510" && ls -1'
-alias ogti510='cd "$ONEDRIVE/2023_automne/gti510" && ls -1'
-alias gti611='cd "$UNI/gti611" && ls -1'
-alias ogti611='cd "$ONEDRIVE/2023_automne/gti611" && ls -1'
-alias log710='cd "$UNI/log710" && ls -1'
-alias olog710='cd "$ONEDRIVE/2023_automne/log710" && ls -1'
-alias mat472='cd "$UNI/mat472" && ls -1'
-alias omat472='cd "$ONEDRIVE/2023_automne/mat472" && ls -1'
-
-alias log320='cd "$UNI/log320" && ls -1'
-alias olog320='cd "$ONEDRIVE/log320" && ls -1'
-alias gti350='cd "$UNI/gti350" && ls -1'
-alias ogti350='cd "$ONEDRIVE/gti350" && ls -1'
+alias log635='cd "$UNI/log635" && ls -1'
+alias olog635='cd "$ONEDRIVE/2024_hiver/log635" && ls -1'
+alias gti320='cd "$UNI/gti320" && ls -1'
+alias ogti320='cd "$ONEDRIVE/2024_hiver/gti320" && ls -1'
+alias mat265='cd "$UNI/mat265" && ls -1'
+alias omat265='cd "$ONEDRIVE/2024_hiver/mat265" && ls -1'
+alias tin503='cd "$UNI/tin503" && ls -1'
+alias otin503='cd "$ONEDRIVE/2024_hiver/tin503" && ls -1'
 
 alias gcc='gcc-13'
 alias cc='gcc-13'
