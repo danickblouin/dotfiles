@@ -137,6 +137,21 @@ require('lspconfig').clangd.setup {
 	cmd = { "clangd", "--offset-encoding=utf-16" },
 }
 
+-- remove error messages from pycodestyle
+require'lspconfig'.pylsp.setup{
+  settings = {
+    pylsp = {
+      plugins = {
+        pycodestyle = {
+			-- enabled = false,
+          ignore = {'W391', 'E501'},
+          -- maxLineLength = 100
+        }
+      }
+    }
+  }
+}
+
 -- Telescope
 map('n', '<leader>ff', '<cmd>Telescope find_files<cr>', opts)
 map('n', '<leader>fg', '<cmd>Telescope live_grep<cr>', opts)

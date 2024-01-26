@@ -88,13 +88,3 @@ __ps1() {
 	PS1+="${RESET}\$ -> "
 }
 PROMPT_COMMAND="__ps1"
-
-# Function to convert markdown to pdf without the header in the markdown file
-pandoc-pdf() {
-    if [ -z "$3" ]; then
-        margin=1
-    else
-        margin="$3"
-    fi
-    pandoc "$1" -o "$2" --variable geometry:"margin=${margin}in"
-}

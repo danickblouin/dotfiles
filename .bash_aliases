@@ -34,6 +34,7 @@ alias mat265='cd "$UNI/mat265" && ls -1'
 alias omat265='cd "$ONEDRIVE/2024_hiver/mat265" && ls -1'
 alias tin503='cd "$UNI/tin503" && ls -1'
 alias otin503='cd "$ONEDRIVE/2024_hiver/tin503" && ls -1'
+alias gtin503='cd "$GOOGLE/2024_HIVER/TIN503-05" && ls -1'
 
 alias gcc='gcc-13'
 alias cc='gcc-13'
