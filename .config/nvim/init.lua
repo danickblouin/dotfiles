@@ -144,7 +144,7 @@ require'lspconfig'.pylsp.setup{
       plugins = {
         pycodestyle = {
 			-- enabled = false,
-          ignore = {'W391', 'E501'},
+          ignore = {'W391', 'E501', 'E128'},
           -- maxLineLength = 100
         }
       }
