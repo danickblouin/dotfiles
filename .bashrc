@@ -78,11 +78,11 @@ __ps1() {
 	else
 		PS1+="${RED}?${E}${DARK} "
 	fi
-	branch="$(git branch --show-current 2> /dev/null)"
-	if [ "$branch" != "" ]; then
-		# PS1+="(${YELLOW} ${branch}${DARK}) "
-		PS1+="(${YELLOW}${branch}${DARK}) "
-	fi
+	# branch="$(git branch --show-current 2> /dev/null)"
+	# if [ "$branch" != "" ]; then
+	# 	# PS1+="(${YELLOW} ${branch}${DARK}) "
+	# 	PS1+="(${YELLOW}${branch}${DARK}) "
+	# fi
 	# PS1+="${BOLD}${DARK}${PWD#"${PWD%/*/*/*}/"} "
 	PS1+="${BOLD}${DARK}${PWD#"${PWD%/*/*}/"} "
 	PS1+="${RESET}\$ -> "
