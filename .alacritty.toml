@@ -1,3 +1,6 @@
+[window]
+opacity = 0.75
+
 [[colors.indexed_colors]]
 color = "0xffa066"
 index = 16
@@ -148,6 +151,3 @@ style = "Regular"
 # [schemes.solarized.primary]
 # background = "0x002b36"
 # foreground = "0x839496"
-
-[window]
-opacity = 1

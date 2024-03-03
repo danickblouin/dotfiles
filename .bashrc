@@ -88,3 +88,15 @@ __ps1() {
 	PS1+="${RESET}\$ -> "
 }
 PROMPT_COMMAND="__ps1"
+
+mullvad-check() {
+	if [ -f /usr/local/bin/mullvad ]; then
+		/usr/local/bin/mullvad status | grep -q "Connected"
+		if [ $? -eq 0 ]; then
+			curl https://am.i.mullvad.net/json | jq
+		else
+			echo "Not connected"
+		fi
+
+	fi
+}

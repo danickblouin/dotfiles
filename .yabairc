@@ -51,5 +51,6 @@ yabai -m rule --add app="^VLC$" manage=off
 yabai -m rule --add app="^Zwift$" manage=off
 yabai -m rule --add app="^mpv$" manage=off
 yabai -m rule --add app="^ÉTSMobile$" manage=off
+yabai -m rule --add app="^Python$" manage=off
 
 echo "yabai configuration loaded.."

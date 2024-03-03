@@ -59,7 +59,8 @@ require('packer').startup(function(use)
 		run = ':TSUpdate'
 	}
 
-	-- LSP
+	-- Code and LSP
+	use 'github/copilot.vim'
 	use {
 		'VonHeikemen/lsp-zero.nvim',
 		branch = 'v3.x',
@@ -150,7 +151,7 @@ require'lspconfig'.pylsp.setup{
       plugins = {
         pycodestyle = {
 			-- enabled = false,
-          ignore = {'W391', 'E501', 'E128'},
+          ignore = {'W391', 'E501', 'E128', 'E231',},
           -- maxLineLength = 100
         }
       }
