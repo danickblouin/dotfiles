@@ -21,6 +21,7 @@ set.wrap = true
 -- Theme settings
 set.background = 'dark'
 vim.cmd('colorscheme kanagawa')
+-- vim.cmd('colorscheme everforest')
 -- vim.cmd("colorscheme gruvbox")
 vim.cmd [[hi Normal guibg=None ctermbg=NONE]]
 
@@ -49,6 +50,7 @@ require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
 	-- Theme
 	use 'rebelot/kanagawa.nvim'
+	use 'sainnhe/everforest'
 
 	-- Alignment and text manipulation
 	use 'junegunn/vim-easy-align'

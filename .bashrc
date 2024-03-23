@@ -4,8 +4,8 @@
 export ALGORIA=~/Documents/algoria
 export EDITOR="nvim"
 export GITHUB=~/Documents/code/github
-export GOOGLE="/Users/danick/danick.blouin.1@etsmtl.net - Google Drive/My Drive"
-export ONEDRIVE="/Users/danick/OneDrive - ETS"
+export GOOGLE="$HOME/danick.blouin.1@etsmtl.net - Google Drive/My Drive"
+export ONEDRIVE="$HOME/OneDrive - ETS"
 export VISUAL="nvim"
 export sioyek="/Applications/sioyek.app/Contents/MacOS/"
 export DOTFILES=~/Documents/code/github/dotfiles
@@ -22,9 +22,11 @@ set -o vi
 if [ "$(uname)" = "Darwin" ]; then
 	eval "$(/opt/homebrew/bin/brew shellenv)" # add homebrew to path
 	export BASH_SILENCE_DEPRECATION_WARNING=1
-	export PATH="$HOME/gems/bin:$HOME/.rbenv/bin:/opt/homebrew/opt/openjdk/bin:/opt/homebrew/bin/pip3:/usr/local/clamav/bin:/usr/local/clamav/sbin:$PATH"
+	# export PATH="$HOME/gems/bin:$HOME/.rbenv/bin:/opt/homebrew/opt/openjdk/bin:/opt/homebrew/bin/pip3:$PATH"
+	export PATH="/opt/homebrew/bin/pip3:$PATH"
 fi
 
+source ~/.env/bin/activate
 
 # --------------------
 # -------ALIAS--------
@@ -44,7 +46,7 @@ if [ -f ~/.git-completion.bash ]; then
 fi
 
 # pomo autocompletion
-complete -C pomo pomo
+# complete -C pomo pomo
 
 
 # -------------------
