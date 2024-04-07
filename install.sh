@@ -16,7 +16,7 @@ installer_homebrew() {
 # Fonction pour installer les outils via Homebrew
 installer_outils() {
     echo "Installation des outils..."
-    brew install git gh tmux pandoc tree cheat npm pdfgrep ripgrep fd
+    brew install git gh tmux pandoc tree cheat npm pdfgrep ripgrep fd sioyek
     brew install koekeishiya/formulae/skhd
     brew install koekeishiya/formulae/yabai
     echo "Outils installés."

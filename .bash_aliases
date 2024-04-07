@@ -17,6 +17,7 @@ alias tree='tree -C'
 alias update='brew update && brew upgrade && brew cleanup'
 alias vi='nvim'
 alias dotnvim='vi ~/.config/nvim/init.lua'
+alias ghcs='gh copilot suggest'
 
 # Temporary aliases for uni
 alias guni='cd "$GOOGLE" && ls -1'

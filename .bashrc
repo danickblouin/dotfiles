@@ -14,6 +14,7 @@ export GEM_HOME=$HOME/gems
 export UNI=~/Documents/universite
 
 export PKG_CONFIG_PATH="/opt/homebrew/opt/readline/lib/pkgconfig"
+export OpenMP_ROOT=$(brew --prefix)/opt/libomp # for gti320 lab
 
 # vim mode
 set -o vi
@@ -86,19 +87,10 @@ __ps1() {
 	# 	PS1+="(${YELLOW}${branch}${DARK}) "
 	# fi
 	# PS1+="${BOLD}${DARK}${PWD#"${PWD%/*/*/*}/"} "
-	PS1+="${BOLD}${DARK}${PWD#"${PWD%/*/*}/"} "
-	PS1+="${RESET}\$ -> "
+	PS1+="$(drink_water) ${BOLD}${DARK}${PWD#"${PWD%/*/*}/"}\$ ${RESET}"
+	# PS1+="${RESET}\$ -> "
+	# PS1+="${RESET}\$ "
 }
 PROMPT_COMMAND="__ps1"
 
-mullvad-check() {
-	if [ -f /usr/local/bin/mullvad ]; then
-		/usr/local/bin/mullvad status | grep -q "Connected"
-		if [ $? -eq 0 ]; then
-			curl https://am.i.mullvad.net/json | jq
-		else
-			echo "Not connected"
-		fi
-
-	fi
-}
+source ~/.bash_scripts
