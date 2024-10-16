@@ -1,0 +1,34 @@
+{
+	"motd": {
+		"cloudBuildErrorAfter": 1594252800000,
+		"cloudBuildWarnAfter": 1590019200000,
+		"defaultNode10After": 1594252800000,
+		"minVersion": "3.0.5",
+		"node8DeploysDisabledAfter": 1613390400000,
+		"node8RuntimeDisabledAfter": 1615809600000,
+		"node8WarnAfter": 1600128000000,
+		"fetched": 1724092636132
+	},
+	"usage": false,
+	"user": {
+		"iss": "accounts.google.com",
+		"azp": "563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com",
+		"aud": "563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com",
+		"sub": "107045031684242431271",
+		"email": "dev@algoria.ca",
+		"email_verified": true,
+		"at_hash": "bF9zzbLP3JMQUDMOg-vT7Q",
+		"iat": 1724092661,
+		"exp": 1724096261
+	},
+	"tokens": {
+		"expires_at": 1724096260064,
+		"access_token": "ya29.a0AcM612zH0JABtim-nBZj50udqnugO-_HzPp_SHS5P8mfhyx-T0WWrBWABHUjqI0rE0Yc90VPzjxJcxPG-ZFCaS75ZTvOaU_JmmZyb0ZUMs-ZOdBD8wd95DQMeaeo75cN3buesiA68KpzroNiKdOnajV1VpP2AYUXQr4AQPasAh7rJAaCgYKAaESARASFQHGX2MiVfc8Rf9VsTAzxV2KDgMryA0181",
+		"expires_in": 3599,
+		"refresh_token": "1//052ZudcGKksGLCgYIARAAGAUSNwF-L9IrLlZW1ucjbuZSfC6YfJ7LkMO0VavUEF-k6q8atpHbgj-5RL22MG1SYe9pCfrmmVa6KFw",
+		"scope": "https://www.googleapis.com/auth/firebase https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/userinfo.email openid",
+		"token_type": "Bearer",
+		"id_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImQyZDQ0NGNmOGM1ZTNhZTgzODZkNjZhMTNhMzE2OTc2YWEzNjk5OTEiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJhY2NvdW50cy5nb29nbGUuY29tIiwiYXpwIjoiNTYzNTg0MzM1ODY5LWZncmhnbWQ0N2JxbmVraWo1aThiNXByMDNobzg0OWU2LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiYXVkIjoiNTYzNTg0MzM1ODY5LWZncmhnbWQ0N2JxbmVraWo1aThiNXByMDNobzg0OWU2LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwic3ViIjoiMTA3MDQ1MDMxNjg0MjQyNDMxMjcxIiwiZW1haWwiOiJkZXZAYWxnb3JpYS5jYSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJhdF9oYXNoIjoiYkY5enpiTFAzSk1RVURNT2ctdlQ3USIsImlhdCI6MTcyNDA5MjY2MSwiZXhwIjoxNzI0MDk2MjYxfQ.XSkbtWS-V9udAa7f7N5dSj34UVyYnJt6-NhZ8OUjlbFeTjkGrXdu5sOBC5MK7pwF5HoQBLNe11XNSRCiJK5K52LLaXjmGhoTUsSXrQCUMxHmYIQCXoe9FnxaoVenh4CP7pIc4rqlznidEIUa8SQwtpVdDuQyFTf20GAu5FLk8tgydRlpHgTZHnr0DzTVBqcRYpNPGWQelsfMiVo4VmpDwkDDF4zjmhlI1jKE27ww1MT4p_e-vHUME0qdyv9LFSIOFDexyBnQY3I6krFNdSVGbWlOId8pfqsBqT6u_nv1fv481vjXjmZBgfrQ-UeM2So0oNeSiSWsJ1O5D-EIihki0w"
+	},
+	"lastError": 1724095384936
+}

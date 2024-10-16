@@ -27,15 +27,14 @@ alias uni="cd $UNI && ls -1"
 alias pf="pdfgrep -in"
 
 # Classes
-alias log635='cd "$UNI/log635" && ls -1'
-alias olog635='cd "$ONEDRIVE/2024_hiver/log635" && ls -1'
-alias gti320='cd "$UNI/gti320" && ls -1'
-alias ogti320='cd "$ONEDRIVE/2024_hiver/gti320" && ls -1'
-alias mat265='cd "$UNI/mat265" && ls -1'
-alias omat265='cd "$ONEDRIVE/2024_hiver/mat265" && ls -1'
-alias tin503='cd "$UNI/tin503" && ls -1'
-alias otin503='cd "$ONEDRIVE/2024_hiver/tin503" && ls -1'
-alias gtin503='cd "$GOOGLE/2024_HIVER/TIN503-05" && ls -1'
+alias log660='cd "$UNI/log660" && ls -1'
+alias olog660='cd "$ONEDRIVE/2024_automne/log660" && ls -1'
+alias gpe450='cd "$UNI/gpe450" && ls -1'
+alias ogpe450='cd "$ONEDRIVE/2024_automne/gpe450" && ls -1'
+alias phy335='cd "$UNI/phy335" && ls -1'
+alias ophy335='cd "$ONEDRIVE/2024_automne/phy335" && ls -1'
+alias log430='cd "$UNI/log430" && ls -1'
+alias olog430='cd "$ONEDRIVE/2024_automne/log430" && ls -1'
 
 alias gcc='gcc-13'
 alias cc='gcc-13'

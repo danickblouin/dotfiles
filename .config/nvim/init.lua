@@ -91,10 +91,11 @@ require('packer').startup(function(use)
 	--
 
 	-- Markdown and LaTeX
-	use {
+	use({
 		"iamcco/markdown-preview.nvim",
-		run = 'vim.fn["mkdp#util#install"]()'
-	}
+		run = function() vim.fn["mkdp#util#install"]() end,
+	})
+
 	use 'img-paste-devs/img-paste.vim'
 	use 'lervag/vimtex'
 	use 'jbyuki/nabla.nvim'
@@ -185,10 +186,6 @@ vim.g.mkdp_theme = 'light'
 vim.cmd [[
   autocmd FileType markdown nmap <buffer><silent> <leader>p :call mdip#MarkdownClipboardImage()<CR>
 ]]
-
--- Orgmode
--- Load custom tree-sitter grammar for org filetype
-require('orgmode').setup_ts_grammar()
 
 -- Tree-sitter configuration
 require'nvim-treesitter.configs'.setup {

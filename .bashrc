@@ -13,9 +13,6 @@ export SCRIPTS=~/Documents/code/github/bash-script
 export GEM_HOME=$HOME/gems
 export UNI=~/Documents/universite
 
-export PKG_CONFIG_PATH="/opt/homebrew/opt/readline/lib/pkgconfig"
-export OpenMP_ROOT=$(brew --prefix)/opt/libomp # for gti320 lab
-
 # vim mode
 set -o vi
 
@@ -24,8 +21,11 @@ if [ "$(uname)" = "Darwin" ]; then
 	eval "$(/opt/homebrew/bin/brew shellenv)" # add homebrew to path
 	export BASH_SILENCE_DEPRECATION_WARNING=1
 	# export PATH="$HOME/gems/bin:$HOME/.rbenv/bin:/opt/homebrew/opt/openjdk/bin:/opt/homebrew/bin/pip3:$PATH"
-	export PATH="/opt/homebrew/bin/pip3:$PATH"
+	export PATH="/opt/homebrew/bin/pip3:/Users/lgbr/.cargo/bin:$PATH"
 fi
+
+export PKG_CONFIG_PATH="/opt/homebrew/opt/readline/lib/pkgconfig"
+export OpenMP_ROOT=$(brew --prefix)/opt/libomp # for gti320 lab
 
 source ~/.env/bin/activate
 
@@ -44,6 +44,9 @@ fi
 # git autocompletion
 if [ -f ~/.git-completion.bash ]; then
 	. ~/.git-completion.bash
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
 fi
 
 # pomo autocompletion
@@ -87,10 +90,17 @@ __ps1() {
 	# 	PS1+="(${YELLOW}${branch}${DARK}) "
 	# fi
 	# PS1+="${BOLD}${DARK}${PWD#"${PWD%/*/*/*}/"} "
-	PS1+="$(drink_water) ${BOLD}${DARK}${PWD#"${PWD%/*/*}/"}\$ ${RESET}"
+	if [ "$ENABLE_WATER_REMINDER" = "1" ]; then
+		PS1+="$(drink_water) ${BOLD}${DARK}${PWD#"${PWD%/*/*}/"}\$ ${RESET}"
+	else
+		PS1+="${BOLD}${DARK}${PWD#"${PWD%/*/*}/"}\$ ${RESET}"
+	fi
 	# PS1+="${RESET}\$ -> "
 	# PS1+="${RESET}\$ "
 }
 PROMPT_COMMAND="__ps1"
 
+ENABLE_WATER_REMINDER=0
+
 source ~/.bash_scripts
+
