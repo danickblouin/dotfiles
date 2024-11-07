@@ -1,6 +1,6 @@
 [window]
-# opacity = 0.75
-opacity = 1.0
+opacity = 0.80
+# opacity = 1.0
 
 [[colors.indexed_colors]]
 color = "0xffa066"

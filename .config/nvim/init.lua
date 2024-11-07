@@ -31,8 +31,8 @@ local opts = { noremap = true }     -- Reuse options for noremap
 vim.g.mapleader = ' '
 
 -- Moving lines in visual mode
-map('v', 'J', ":m '>+1<CR>gv=gv", opts)
-map('v', 'K', ":m '<-2<CR>gv=gv", opts)
+-- map('v', 'J', ":m '>+1<CR>gv=gv", opts)
+-- map('v', 'K', ":m '<-2<CR>gv=gv", opts)
 
 -- Moving between splits
 map('', '<C-j>', '<C-W>j', opts)
